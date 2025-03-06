@@ -208,17 +208,6 @@ const performSearch = async () => {
                                 Dashboard
                             </Link>
                         </template>
-                        <template v-else>
-                            <Link
-                                :href="route('login')"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-                            >
-                                Log in
-                            </Link>
-                            <Link :href="route('register')" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700">
-                                Register
-                            </Link>
-                        </template>
                     </nav>
                 </div>
             </div>
@@ -231,14 +220,6 @@ const performSearch = async () => {
                 <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
                     Get up-to-date information about flights, including status, delays, and gate information.
                 </p>
-
-                <!-- Free tier limitations notice -->
-                <div class="mx-auto mt-4 max-w-3xl rounded-md bg-blue-50 p-3 dark:bg-blue-900/30">
-                    <p class="text-sm text-gray-700 dark:text-gray-300">
-                        <strong>Free Tier Information:</strong> This application uses the Aviationstack API free tier, which has a limit of 100
-                        requests per month.
-                    </p>
-                </div>
             </div>
 
             <!-- Search Section -->
@@ -253,7 +234,7 @@ const performSearch = async () => {
                                     type="text"
                                     id="search"
                                     v-model="searchQuery"
-                                    placeholder="Enter flight number (e.g., BA123) or route (e.g., LHR-JFK)"
+                                    placeholder="Enter flight number (e.g., BA123)"
                                     class="block w-full flex-1 rounded-l-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm"
                                     @keyup.enter="performSearch"
                                 />
@@ -283,7 +264,7 @@ const performSearch = async () => {
                                 </button>
                             </div>
                             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                                Enter a flight number (e.g., BA123) or a route (e.g., LHR-JFK) to search for flight information.
+                                Enter a flight number (e.g., BA123) to search for flight information.
                             </p>
                         </div>
                     </div>
